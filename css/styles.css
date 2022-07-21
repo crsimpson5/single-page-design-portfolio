@@ -166,9 +166,33 @@ select {
 }
 
 .tile {
+  display: grid;
+  padding: 1.5rem;
+  line-height: 1.2;
   color: var(--white);
   font-size: 1.5rem;
   font-weight: bold;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.tile[data-size=wide] {
+  grid-column: span 2;
+}
+.tile[data-size=large] {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+.tile .tile__img {
+  place-self: start end;
+}
+.tile .tile__text {
+  place-self: end start;
+}
+@media only screen and (min-width: 64em) {
+  .tile:nth-of-type(5) {
+    grid-column: 5/7;
+    grid-row: 1;
+  }
 }
 
 :root {
@@ -189,6 +213,27 @@ body {
   color: var(--medium-brown);
   font-family: "Plus Jakarta Sans", sans-serif;
   line-height: 1.6;
+  text-align: center;
+}
+
+.tile-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 11.25rem 9.875rem 11.25rem 9.875rem 11.25rem 11.25rem;
+  grid-auto-flow: row dense;
+}
+@media only screen and (min-width: 45em) {
+  .tile-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: initial;
+    grid-auto-rows: 11.25rem 9.875rem;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .tile-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

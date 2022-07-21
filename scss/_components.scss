@@ -29,7 +29,37 @@
 }
 
 .tile {
+  display: grid;
+  padding: 1.5rem;
+  line-height: 1.2;
   color: var(--white);
   font-size: 1.5rem;
   font-weight: bold;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  &[data-size="wide"] {
+    grid-column: span 2;
+  }
+
+  &[data-size="large"] {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+
+  .tile__img {
+    place-self: start end;
+  }
+
+  .tile__text {
+    place-self: end start;
+  }
+
+  @media only screen and (min-width: 64em) {
+    // Correct order of tiles
+    &:nth-of-type(5) {
+      grid-column: 5 / 7;
+      grid-row: 1;
+    }
+  }
 }

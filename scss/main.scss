@@ -14,4 +14,23 @@ body {
   color: var(--medium-brown);
   font-family: "Plus Jakarta Sans", sans-serif;
   line-height: 1.6;
+  text-align: center;
+}
+
+.tile-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 11.25rem 9.875rem 11.25rem 9.875rem 11.25rem 11.25rem;
+  grid-auto-flow: row dense;
+
+  @media only screen and (min-width: 45em) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: initial;
+    grid-auto-rows: 11.25rem 9.875rem;
+  }
+
+  @media only screen and (min-width: 64em) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
