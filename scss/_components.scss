@@ -1,0 +1,35 @@
+.button {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  line-height: 1;
+  font-size: 0.875rem;
+  padding: 1.125em 2em;
+  border-radius: 100vh;
+  transition: background 150ms ease;
+
+  &[data-type="primary"] {
+    background: var(--black);
+    color: var(--light-cream);
+
+    &:hover {
+      background: var(--blue);
+    }
+  }
+
+  &[data-type="secondary"] {
+    background: var(--light-red);
+    color: var(--light-cream);
+
+    &:hover {
+      background: var(--orange);
+    }
+  }
+}
+
+.tile {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: bold;
+}

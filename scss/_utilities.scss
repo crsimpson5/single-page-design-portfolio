@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+@each $color, $hsl in $colors {
+  .bg-#{$color} {
+    background-color: #{$hsl};
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  --max-width: 69.375rem;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+}
+
+.heading-1,
+.heading-2,
+.heading-3 {
+  font-weight: bold;
+  color: var(--black);
+  line-height: 1.2;
+}
+
+.heading-1 {
+  font-size: 2rem;
+}

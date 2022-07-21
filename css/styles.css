@@ -71,6 +71,106 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.bg-blue {
+  background-color: hsl(252, 66%, 62%);
+}
+
+.bg-orange {
+  background-color: hsl(28, 89%, 67%);
+}
+
+.bg-pink {
+  background-color: hsl(0, 78%, 79%);
+}
+
+.bg-light-red {
+  background-color: hsl(7, 77%, 66%);
+}
+
+.bg-cyan {
+  background-color: hsl(172, 46%, 57%);
+}
+
+.bg-purple {
+  background-color: hsl(314, 45%, 23%);
+}
+
+.bg-black {
+  background-color: hsl(0, 0%, 1%);
+}
+
+.bg-medium-brown {
+  background-color: hsl(30, 5%, 45%);
+}
+
+.bg-light-cream {
+  background-color: hsl(28, 100%, 97%);
+}
+
+.bg-white {
+  background-color: hsl(0, 100%, 100%);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  --max-width: 69.375rem;
+  --padding: 1rem;
+  width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+}
+
+.heading-1,
+.heading-2,
+.heading-3 {
+  font-weight: bold;
+  color: var(--black);
+  line-height: 1.2;
+}
+
+.heading-1 {
+  font-size: 2rem;
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  line-height: 1;
+  font-size: 0.875rem;
+  padding: 1.125em 2em;
+  border-radius: 100vh;
+  transition: background 150ms ease;
+}
+.button[data-type=primary] {
+  background: var(--black);
+  color: var(--light-cream);
+}
+.button[data-type=primary]:hover {
+  background: var(--blue);
+}
+.button[data-type=secondary] {
+  background: var(--light-red);
+  color: var(--light-cream);
+}
+.button[data-type=secondary]:hover {
+  background: var(--orange);
+}
+
+.tile {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 :root {
   --blue: hsl(252, 66%, 62%);
   --orange: hsl(28, 89%, 67%);
@@ -81,6 +181,14 @@ select {
   --black: hsl(0, 0%, 1%);
   --medium-brown: hsl(30, 5%, 45%);
   --light-cream: hsl(28, 100%, 97%);
+  --white: hsl(0, 100%, 100%);
+}
+
+body {
+  background-color: var(--light-cream);
+  color: var(--medium-brown);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.6;
 }
 
 /*# sourceMappingURL=styles.css.map */

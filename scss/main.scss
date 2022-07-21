@@ -1,8 +1,17 @@
 @use "variables" as *;
 @use "reset";
+@use "utilities";
+@use "components";
 
 :root {
   @each $color, $hsl in $colors {
     --#{$color}: #{$hsl};
   }
+}
+
+body {
+  background-color: var(--light-cream);
+  color: var(--medium-brown);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.6;
 }
