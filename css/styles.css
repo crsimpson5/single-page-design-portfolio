@@ -83,14 +83,4 @@ select {
   --light-cream: hsl(28, 100%, 97%);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
 /*# sourceMappingURL=styles.css.map */

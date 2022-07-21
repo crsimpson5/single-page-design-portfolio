@@ -1,3 +1,5 @@
+// https://piccalil.li/blog/a-modern-css-reset/
+
 /* Box sizing rules */
 *,
 *::before,
@@ -20,8 +22,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -62,35 +64,13 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
+
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
-:root {
-  --blue: hsl(252, 66%, 62%);
-  --orange: hsl(28, 89%, 67%);
-  --pink: hsl(0, 78%, 79%);
-  --light-red: hsl(7, 77%, 66%);
-  --cyan: hsl(172, 46%, 57%);
-  --purple: hsl(314, 45%, 23%);
-  --black: hsl(0, 0%, 1%);
-  --medium-brown: hsl(30, 5%, 45%);
-  --light-cream: hsl(28, 100%, 97%);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-/*# sourceMappingURL=styles.css.map */

@@ -1,9 +1,8 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@use "variables" as *;
+@use "reset";
 
-body {
-  margin: 0;
+:root {
+  @each $color, $hsl in $colors {
+    --#{$color}: #{$hsl};
+  }
 }
