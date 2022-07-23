@@ -11,15 +11,72 @@
   --br-400: 0.625rem;
 }
 
+*:focus-visible {
+  outline: 3px dashed var(--blue);
+  outline-offset: 2px;
+}
+
 body {
   background-color: var(--light-cream);
   color: var(--medium-brown);
   font-family: "Plus Jakarta Sans", sans-serif;
   line-height: 1.6;
-  text-align: center;
 
   @media only screen and (min-width: 45em) {
     text-align: left;
+    font-size: 1.125rem;
+  }
+}
+
+// Disable animations on load
+.preload * {
+  animation-duration: 0s !important;
+}
+
+.section {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.header {
+  margin-block: 1rem;
+
+  @media only screen and (min-width: 45em) {
+    margin-block: 2.125rem;
+  }
+}
+
+.top-section {
+  margin-block: 2rem;
+
+  @media only screen and (min-width: 45em) {
+    margin-block: 4rem;
+  }
+
+  * {
+    --flow-spacing: 1rem;
+
+    @media only screen and (min-width: 45em) {
+      --flow-spacing: 1.5rem;
+    }
+  }
+
+  .body-text {
+    max-width: min(80%, 45.625rem);
+    margin-inline: auto;
+  }
+
+  & > *:first-child {
+    margin-bottom: 2rem;
+
+    @media only screen and (min-width: 45em) {
+      margin-bottom: 4rem;
+    }
+
+    @media only screen and (min-width: 64em) {
+      margin-bottom: 5rem;
+    }
   }
 }
 
@@ -36,6 +93,63 @@ body {
 
   @media only screen and (min-width: 64em) {
     grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.bio-section {
+  text-align: center;
+  gap: 2.5rem 0;
+  align-items: center;
+  margin-block: 6.25rem;
+
+  @media only screen and (min-width: 45em) {
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    margin-block: 7.5rem;
+    text-align: left;
+  }
+
+  @media only screen and (min-width: 64em) {
+    margin-block: 8.5rem 5.5rem;
+
+    * {
+      --flow-spacing: 1.875em;
+    }
+  }
+
+  & > *:first-child {
+    @media only screen and (min-width: 45em) {
+      justify-self: end;
+      transform: translateX(-4.3125rem);
+    }
+
+    @media only screen and (min-width: 64em) {
+      transform: translateX(-7.8125rem);
+    }
+  }
+
+  &__img {
+    max-width: min(22.75rem, 100% - 2rem);
+
+    @media only screen and (min-width: 64em) {
+      max-width: 27.8125rem;
+    }
+  }
+
+  .body-text {
+    margin-inline: auto;
+
+    @media only screen and (min-width: 45em) {
+      margin-left: 0;
+    }
+  }
+}
+
+.carousel-section {
+  margin-block: 6.25rem;
+
+  * {
+    --flow-spacing: 2rem;
   }
 }
 
@@ -58,9 +172,36 @@ body {
   justify-content: center;
 }
 
-.section {
-  display: grid;
-  gap: 1.5rem;
-  justify-items: center;
+.booking-section {
+  margin-block: 2.5rem;
   padding: 3rem 1.5rem;
+  text-align: center;
+
+  @media only screen and (min-width: 45em) {
+    padding: 3.5rem 4.6875rem 4rem 4.6875rem;
+    margin-block: 3.5rem;
+  }
+
+  @media only screen and (min-width: 64em) {
+    text-align: left;
+    grid-auto-flow: column;
+    align-items: center;
+    padding: 5rem 4.0625rem;
+
+    & > *:first-child {
+      justify-self: start;
+    }
+  }
+}
+
+.footer {
+  margin-block: 2rem;
+
+  @media only screen and (min-width: 45em) {
+    margin-block: 3.5rem;
+  }
+
+  @media only screen and (min-width: 64em) {
+    margin-bottom: 4rem;
+  }
 }

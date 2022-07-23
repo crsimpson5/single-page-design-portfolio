@@ -1,3 +1,9 @@
+// Allow animations after delay
+setTimeout(() => {
+  document.body.classList.remove("preload");
+}, 300);
+
+// Swiper config
 const swiper = new Swiper(".swiper", {
   loop: true,
   centeredSlides: true,

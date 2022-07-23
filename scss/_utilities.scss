@@ -6,8 +6,9 @@
   }
 }
 
-.spacing > * {
-  margin-block: 3rem;
+.flow > * + * {
+  --flow-spacing: 1.5rem;
+  margin-top: var(--flow-spacing);
 }
 
 .flex {
@@ -28,6 +29,10 @@
   margin-inline: auto;
 }
 
+.body-text {
+  max-width: 33.75rem;
+}
+
 .heading-1,
 .heading-2,
 .heading-3 {
@@ -37,7 +42,13 @@
 }
 
 .heading-1 {
-  font-size: 2rem;
+  font-size: clamp(2.25rem, 3.5vw + 1rem, 3.5rem);
+}
+.heading-2 {
+  font-size: clamp(1.625rem, 2vw + 1rem, 2.5rem);
+}
+.heading-3 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
 }
 
 .text-center {
