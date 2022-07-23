@@ -215,6 +215,16 @@ select {
   font-weight: bold;
   border-radius: 0.5rem;
   overflow: hidden;
+  transition: all 200ms;
+}
+@media (hover: hover) {
+  .tile:hover {
+    transform: scale(1.03);
+  }
+  .tile:hover .tile__text {
+    animation: jump 250ms ease-in-out;
+    animation-fill-mode: forwards;
+  }
 }
 .tile[data-size=wide] {
   grid-column: span 2;
@@ -228,6 +238,23 @@ select {
 }
 .tile .tile__text {
   place-self: end start;
+  animation: fall 200ms;
+}
+@keyframes jump {
+  50% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(-0.75rem);
+  }
+}
+@keyframes fall {
+  0% {
+    transform: translateY(-0.75rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 @media only screen and (min-width: 64em) {
   .tile:nth-of-type(5) {
