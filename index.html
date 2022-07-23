@@ -11,6 +11,7 @@
     />
     <title>Frontend Mentor | Single-page design portfolio</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="main.js" defer></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,16 +19,25 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header>
-      <div class="container flex flex-row">
-        <a href="#"><img src="images/logo.svg" alt="" /></a>
+      <div class="container flex flex-row text-center">
+        <a href="#">
+          <img src="images/logo.svg" alt="" />
+          <div class="sr-only">home</div>
+        </a>
         <button class="button" data-type="primary">Free Consultation</button>
       </div>
     </header>
 
-    <main>
+    <main class="spacing">
       <section class="container">
         <h1 class="heading-1">Design solutions made easy</h1>
         <p>
@@ -80,6 +90,7 @@
       </section>
 
       <section class="container">
+        <img src="images/image-amy.webp" alt="Amy" />
         <h2 class="heading-2">
           I’m Amy, and I’d love to work on your next project
         </h2>
@@ -91,12 +102,42 @@
         <button class="button" data-type="secondary">Free Consultation</button>
       </section>
 
-      <section>
+      <!-- Carousel -->
+      <section class="text-center">
         <h2 class="heading-3">My Work</h2>
+
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="images/image-slide-1.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image-slide-2.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image-slide-3.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image-slide-4.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/image-slide-5.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <button class="button button--control prev" data-type="primary">
+          <img src="images/icon-arrow-left.svg" alt="" />
+          <span class="sr-only">prev slide</span>
+        </button>
+        <button class="button button--control next" data-type="primary">
+          <img src="images/icon-arrow-right.svg" alt="" />
+          <span class="sr-only">next slide</span>
+        </button>
       </section>
 
-      <section class="container">
-        <h2 class="heading-2">Book a call with me</h2>
+      <section class="container bg-black color-light br-400">
+        <h2 class="heading-2 color-light">Book a call with me</h2>
         <p>
           I’d love to have a chat to see how I can help you. The best first step
           is for us to discuss your project during a free consultation. Then we
@@ -107,13 +148,12 @@
     </main>
 
     <footer>
-      <div class="container">
-        <img src="images/logo.svg" alt="" /><button
-          class="button"
-          data-type="primary"
-        >
-          Free Consultation
-        </button>
+      <div class="container flex flex-row text-center">
+        <a href="#">
+          <img src="images/logo.svg" alt="" />
+          <div class="sr-only">home</div>
+        </a>
+        <button class="button" data-type="primary">Free Consultation</button>
       </div>
     </footer>
   </body>
