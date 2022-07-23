@@ -6,8 +6,13 @@
   }
 }
 
+.spacing > * {
+  margin-block: 3rem;
+}
+
 .flex {
   display: flex;
+  gap: 1rem;
 }
 
 .flex-row {
@@ -17,7 +22,7 @@
 
 .container {
   --max-width: 69.375rem;
-  --padding: 1rem;
+  --padding: clamp(1rem, 4vw, 2.5rem);
 
   width: min(var(--max-width), 100% - var(--padding) * 2);
   margin-inline: auto;
@@ -33,4 +38,26 @@
 
 .heading-1 {
   font-size: 2rem;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.color-light {
+  color: var(--light-cream);
+}
+
+.br-400 {
+  border-radius: var(--br-400);
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

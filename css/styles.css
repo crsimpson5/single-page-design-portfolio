@@ -111,8 +111,13 @@ select {
   background-color: hsl(0, 100%, 100%);
 }
 
+.spacing > * {
+  margin-block: 3rem;
+}
+
 .flex {
   display: flex;
+  gap: 1rem;
 }
 
 .flex-row {
@@ -122,7 +127,7 @@ select {
 
 .container {
   --max-width: 69.375rem;
-  --padding: 1rem;
+  --padding: clamp(1rem, 4vw, 2.5rem);
   width: min(var(--max-width), 100% - var(--padding) * 2);
   margin-inline: auto;
 }
@@ -139,8 +144,31 @@ select {
   font-size: 2rem;
 }
 
+.text-center {
+  text-align: center !important;
+}
+
+.color-light {
+  color: var(--light-cream);
+}
+
+.br-400 {
+  border-radius: var(--br-400);
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .button {
   display: inline-block;
+  text-decoration: none;
   cursor: pointer;
   border: none;
   background: transparent;
@@ -149,6 +177,12 @@ select {
   padding: 1.125em 2em;
   border-radius: 100vh;
   transition: background 150ms ease;
+}
+@media only screen and (min-width: 45em) {
+  .button {
+    font-size: 1rem;
+    padding: 1.25em 2.875em;
+  }
 }
 .button[data-type=primary] {
   background: var(--black);
@@ -163,6 +197,13 @@ select {
 }
 .button[data-type=secondary]:hover {
   background: var(--orange);
+}
+.button--control {
+  display: inline-grid;
+  place-items: center;
+  width: 4rem;
+  aspect-ratio: 1;
+  padding: 0;
 }
 
 .tile {
@@ -206,6 +247,7 @@ select {
   --medium-brown: hsl(30, 5%, 45%);
   --light-cream: hsl(28, 100%, 97%);
   --white: hsl(0, 100%, 100%);
+  --br-400: 0.625rem;
 }
 
 body {
@@ -215,25 +257,54 @@ body {
   line-height: 1.6;
   text-align: center;
 }
+@media only screen and (min-width: 45em) {
+  body {
+    text-align: left;
+  }
+}
 
 .tile-grid {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 11.25rem 9.875rem 11.25rem 9.875rem 11.25rem 11.25rem;
+  grid-auto-rows: 11.25rem 9.875rem 11.25rem 9.875rem 11.25rem 11.25rem;
   grid-auto-flow: row dense;
 }
 @media only screen and (min-width: 45em) {
   .tile-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: initial;
-    grid-auto-rows: 11.25rem 9.875rem;
   }
 }
 @media only screen and (min-width: 64em) {
   .tile-grid {
     grid-template-columns: repeat(6, 1fr);
   }
+}
+
+.swiper-slide {
+  max-width: 70%;
+}
+@media only screen and (min-width: 64em) {
+  .swiper-slide {
+    max-width: 34rem;
+  }
+}
+.swiper-slide img {
+  width: 100%;
+  border-radius: var(--br-400);
+}
+
+.button-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.section {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 3rem 1.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
