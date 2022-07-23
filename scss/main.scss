@@ -23,7 +23,6 @@ body {
   line-height: 1.6;
 
   @media only screen and (min-width: 45em) {
-    text-align: left;
     font-size: 1.125rem;
   }
 }
@@ -150,6 +149,10 @@ body {
 
   * {
     --flow-spacing: 2rem;
+
+    @media only screen and (min-width: 45em) {
+      --flow-spacing: 3.5rem;
+    }
   }
 }
 
